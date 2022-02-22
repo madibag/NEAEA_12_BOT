@@ -2,6 +2,7 @@ RUN apt update && apt upgrade -y
 
 COPY requirements.txt /requirements.txt
 RUN cd /
+RUN python3 -y
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /Grade12
 WORKDIR /Grade12
