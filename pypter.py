@@ -18,7 +18,7 @@ async def intercept_on(response):
 
 
 async def pyppter(regId):
-	browser = await launch(headless=True)
+	browser = await launch(headless=True,options={'args': ['--no-sandbox']})
 
 	page = await browser.newPage()
 
