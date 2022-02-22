@@ -1,5 +1,6 @@
 pyrogram
 TgCrypto
 pymongo
+pymongo[srv]
 asyncio
 pyppeteer
