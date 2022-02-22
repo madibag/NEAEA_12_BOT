@@ -13,7 +13,7 @@ def insert_into(first_name,chat_id,reg_name,user_name,reg_id):
 
 	mydoc = students.find(toAdd)
 
-	if len(mydoc) == 0:
+	if len(list(mydoc)) == 0:
 		students.insert_one(toAdd)
 
 	#Config.ADMIN
