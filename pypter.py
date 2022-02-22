@@ -34,6 +34,7 @@ async def pyppter(regId):
 	await page.type("#Registration_Number",regId)
 
 	await page.click('form button[type=submit]')
+	time.sleep(2)
 
 
 	#getCaptcha = await page.evaluate('document.querySelector("#captcha").value', force_expr=True)
