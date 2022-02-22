@@ -1,7 +1,7 @@
 {
     "name": "Grade12Bot",
     "description": "Telegram bot to get result of national exam ethiopia",
-    "repository": "https://github.com/madibag/NEAEA_12_BOT/",
+    "repository": "https://github.com/madibag/NEAEA_12_BOT",
     "stack": "container",
     "keywords": [
       "telegram",
