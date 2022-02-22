@@ -18,7 +18,7 @@ async def intercept_on(response):
 
 
 async def pyppter(regId):
-	browser = await launch(headless=False)
+	browser = await launch(headless=True)
 
 	page = await browser.newPage()
 
