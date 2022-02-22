@@ -72,6 +72,7 @@ async def registration(context,message):
 		await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
 		await context.send_message(chat_id=chat_id,
 			text=Config.ERROR)
+		return
 		print(e)
 
 	#Delete a stiker
