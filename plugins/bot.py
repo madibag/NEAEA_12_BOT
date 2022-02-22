@@ -73,6 +73,7 @@ async def registration(context,message):
 		await context.send_message(chat_id=chat_id,
 			text=Config.ERROR)
 		print("Error_2")
+		print(e)
 		return
 
 
