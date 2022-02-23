@@ -2,7 +2,6 @@ from pyrogram import Client,idle
 import asyncio
 from config import Config
 from pyppeteer import launch
-from pypter import brows
 
 app = Client(
 	"Grade12",
