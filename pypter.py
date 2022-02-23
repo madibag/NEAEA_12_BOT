@@ -27,11 +27,13 @@ async def pyppter(regId):
 	#two thinings in one stone
 	#https://maxiee.github.io/post/PyppeteerCrawlingInterceptResponsemd/
 
-	await page.goto('http://result.neaea.gov.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
+	#await page.goto('http://result.neaea.gov.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
+	await page.goto('https://result.ethernet.edu.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
 
 	#time.sleep(2)
 
-	await page.type("#Registration_Number",regId)
+	#await page.type("#Registration_Number",regId)
+	await page.type("#admission",regId)
 
 	await page.click('form button[type=submit]')
 	time.sleep(1)
