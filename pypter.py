@@ -5,20 +5,25 @@ import json
 
 
 the_response = ''
+browser = ''
+
+async def brows():
+	global browser
+	browser = await launch(headless=False)
 
 async def intercept_on(response):
 	#print(response.url)
 
 	global the_response
 
-	if response.url == 'http://result.neaea.gov.et/Home/result':
+	if response.url == 'https://result.ethernet.edu.et/index.php':
 		print(response.url)
 
 		the_response = await response.json()
 
 
 async def pyppter(regId):
-	browser = await launch(headless=True,options={'args': ['--no-sandbox']})
+	#browser = await launch(headless=False)
 
 	page = await browser.newPage()
 
@@ -27,16 +32,13 @@ async def pyppter(regId):
 	#two thinings in one stone
 	#https://maxiee.github.io/post/PyppeteerCrawlingInterceptResponsemd/
 
-	#await page.goto('http://result.neaea.gov.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
 	await page.goto('https://result.ethernet.edu.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
 
-	#time.sleep(2)
+	time.sleep(2)
 
-	#await page.type("#Registration_Number",regId)
 	await page.type("#admission",regId)
 
 	await page.click('form button[type=submit]')
-	time.sleep(1)
 
 
 	#getCaptcha = await page.evaluate('document.querySelector("#captcha").value', force_expr=True)
@@ -63,8 +65,8 @@ async def pyppter(regId):
 	#print(vll)
 
 
-	await browser.close()
-	
+	#await browser.close()
+	await page.close()
 
 	return the_response,f'{regId}.png'
 
