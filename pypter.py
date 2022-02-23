@@ -5,11 +5,7 @@ import json
 
 
 the_response = ''
-browser = ''
 
-async def brows():
-	global browser
-	browser = await launch(headless=False)
 
 async def intercept_on(response):
 	#print(response.url)
@@ -24,6 +20,7 @@ async def intercept_on(response):
 
 async def pyppter(regId):
 	#browser = await launch(headless=False)
+	browser = await launch(headless=False)
 
 	page = await browser.newPage()
 
