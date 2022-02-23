@@ -6,7 +6,9 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 import json
 import os
-
+#############################################################################
+from pyppeteer import launch
+################################################################################
 
 @Client.on_message(filters.command(["start"])& filters.private)
 async def start(context,message):
@@ -40,29 +42,29 @@ async def registration(context,message):
 	except:
 		return
 	#make procesing a stiker
-
 	a = await context.send_sticker(chat_id=chat_id,
 							sticker = Config.STICKER_ID)
-	
+
 	await context.send_chat_action(chat_id=chat_id,action="typing")
 
 	try:
 		Json,pic = await pyppter(reg_id)
 
-		print(Json)
+		print(0,type(Json))
 
 		"""if Json["m"] == "NO Captcha":
 			#raise Exception
 			await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
-			await context.send_message(chat_id=chat_id,text=Config.ERROR)
-			print("Error_1")
+			await context.send_message(chat_id=chat_id,
+									text=Config.ERROR)
+			
 			return"""
 
-		#print(Json)
+		print(Json)
 
-		caption = f"Name - {Json['name']}\n{Json['stream']\n ______ Subjects ______ \n"
+		caption = f"Name - {Json['name']}\n ______ Subjects ______ \n"
 			
-		for key in Json['subject_mark']:
+		for key in Json['subject_marks']:
 			caption+=f"{key['subject_name']} - {key['mark']}\n"
 		await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
 		await context.send_photo(
@@ -75,10 +77,7 @@ async def registration(context,message):
 		await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
 		await context.send_message(chat_id=chat_id,
 			text=Config.ERROR)
-		print("Error_2")
 		print(e)
-		return
-
 
 	#Delete a stiker
 
