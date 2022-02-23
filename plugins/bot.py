@@ -7,7 +7,6 @@ from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 import json
 import os
 #############################################################################
-from pyppeteer import launch
 ################################################################################
 
 @Client.on_message(filters.command(["start"])& filters.private)
