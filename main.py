@@ -1,7 +1,6 @@
 from pyrogram import Client,idle
 import asyncio
 from config import Config
-from pyppeteer import launch
 
 app = Client(
 	"Grade12",
