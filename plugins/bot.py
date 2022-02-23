@@ -77,6 +77,7 @@ async def registration(context,message):
 		await context.send_message(chat_id=chat_id,
 			text=Config.ERROR)
 		print(e)
+		return
 
 	#Delete a stiker
 
