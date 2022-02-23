@@ -16,8 +16,6 @@ app = Client(
 async def main_a():
 	await app.start()
 
-	browser = await brows()
-
 	await idle()
 
 	
