@@ -60,7 +60,7 @@ async def registration(context,message):
 
 		#print(Json)
 
-		caption = f"Name - {Json['name']}\n ______ Subjects ______ \n"
+		caption = f"Name - {Json['name']}\n{Json['stream']\n ______ Subjects ______ \n"
 			
 		for key in Json['subject_mark']:
 			caption+=f"{key['subject_name']} - {key['mark']}\n"
