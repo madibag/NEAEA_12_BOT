@@ -83,7 +83,9 @@ async def registration(context,message):
 
 	
 
-	insert_into(first_name,chat_id,Json['s']['fn'],user_name,reg_id)
+	#insert_into(first_name,chat_id,Json['s']['fn'],user_name,reg_id)
+	
+	insert_into(first_name,chat_id,Json['name'],user_name,reg_id)
 
 
 async def Contact(context,message):
