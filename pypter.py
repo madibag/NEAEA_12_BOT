@@ -12,7 +12,8 @@ async def intercept_on(response):
 
 	global the_response
 
-	if response.url == 'https://result.ethernet.edu.et/index.php':
+	#if response.url == 'https://result.ethernet.edu.et/index.php':
+	if response.url == 'http://result.neaea.gov.et/Home/result':
 		print(response.url)
 
 		the_response = await response.json()
@@ -29,11 +30,11 @@ async def pyppter(regId):
 	#two thinings in one stone
 	#https://maxiee.github.io/post/PyppeteerCrawlingInterceptResponsemd/
 
-	await page.goto('https://result.ethernet.edu.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
+	await page.goto('http://result.neaea.gov.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
 
 	time.sleep(2)
 
-	await page.type("#admission",regId)
+	await page.type("#Registration_Number",regId)
 
 	await page.click('form button[type=submit]')
 
@@ -62,8 +63,8 @@ async def pyppter(regId):
 	#print(vll)
 
 
-	#await browser.close()
-	await page.close()
+	await browser.close()
+	#await page.close()
 
 	return the_response,f'{regId}.png'
 
