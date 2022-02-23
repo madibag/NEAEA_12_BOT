@@ -1,7 +1,8 @@
-from pyrogram import Client
+from pyrogram import Client,idle
 import asyncio
 from config import Config
-
+from pyppeteer import launch
+from pypter import brows
 
 app = Client(
 	"Grade12",
@@ -11,7 +12,15 @@ app = Client(
 	plugins=dict(root="plugins")
 	)
 
-app.run()
 
+async def main_a():
+	await app.start()
+
+	browser = await brows()
+
+	await idle()
+
+	
+app.run(main_a())
 
 
