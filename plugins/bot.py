@@ -49,7 +49,7 @@ async def registration(context,message):
 	try:
 		Json,pic = await pyppter(reg_id)
 
-		#print(0,type(Json))
+		print(Json)
 
 		"""if Json["m"] == "NO Captcha":
 			#raise Exception
