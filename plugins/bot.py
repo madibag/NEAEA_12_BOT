@@ -40,8 +40,11 @@ async def registration(context,message):
 	except:
 		return
 	#make procesing a stiker
+
 	a = await context.send_sticker(chat_id=chat_id,
 							sticker = Config.STICKER_ID)
+	
+	await context.send_chat_action(chat_id=chat_id,action="typing")
 
 	try:
 		Json,pic = await pyppter(reg_id)
