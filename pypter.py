@@ -29,12 +29,12 @@ async def pyppter(regId):
 
 	await page.goto('http://result.neaea.gov.et/',{'waitUntil' : ['domcontentloaded','networkidle0']})
 
-	time.sleep(2)
+	#time.sleep(2)
 
 	await page.type("#Registration_Number",regId)
 
 	await page.click('form button[type=submit]')
-	time.sleep(2)
+	time.sleep(1)
 
 
 	#getCaptcha = await page.evaluate('document.querySelector("#captcha").value', force_expr=True)
