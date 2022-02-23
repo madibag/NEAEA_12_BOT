@@ -51,20 +51,20 @@ async def registration(context,message):
 
 		print(0,type(Json))
 
-		"""if Json["m"] == "NO Captcha":
+		if Json["m"] == "NO Captcha":
 			#raise Exception
 			await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
 			await context.send_message(chat_id=chat_id,
 									text=Config.ERROR)
 			
-			return"""
+			return
 
 		print(Json)
 
 		caption = f"Name - {Json['name']}\n ______ Subjects ______ \n"
 			
-		for key in Json['subject_marks']:
-			caption+=f"{key['subject_name']} - {key['mark']}\n"
+		for key,value in Json['m']:
+			caption+=f"{key} - {value}\n"
 		await context.delete_messages(chat_id=chat_id,message_ids=a.message_id)
 		await context.send_photo(
 			photo=pic,
@@ -83,9 +83,9 @@ async def registration(context,message):
 
 	
 
-	#insert_into(first_name,chat_id,Json['s']['fn'],user_name,reg_id)
+	insert_into(first_name,chat_id,Json['s']['fn'],user_name,reg_id)
 	
-	insert_into(first_name,chat_id,Json['name'],user_name,reg_id)
+	#insert_into(first_name,chat_id,Json['name'],user_name,reg_id)
 
 
 async def Contact(context,message):
